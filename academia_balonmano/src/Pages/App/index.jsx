@@ -7,6 +7,8 @@ import Login from '../Login'
 import Usuario from '../Usuario'
 import Equipos from '../Equipos'
 import NotFound from '../notfound'
+import Navbar from '../../Components/Navbar'
+import Layout from "../../Components/Layout"
 
 const AppRoutes = () => {
   let routes = useRoutes([
@@ -15,6 +17,7 @@ const AppRoutes = () => {
     { path: "/login", element: <Login /> },
     { path: "/equipos", element: <Equipos /> },
     { path: "/*", element: <NotFound /> },
+    { path: "/usuario", element: <Usuario /> },
   ]);
 
   return routes
@@ -26,7 +29,10 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <AppRoutes />
+        <Navbar />
+        <Layout>
+          <AppRoutes />
+        </Layout>
       </BrowserRouter>
     </>
   )
