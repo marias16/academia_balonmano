@@ -1,7 +1,7 @@
 // eslint-disable-next-line react/prop-types
 const Layout = ({ children }) => {
     return (
-        <div className="flex flex-col mt-20 items-center">
+        <div className="flex flex-col mt-20 mb-20 items-center">
             {children}
         </div>
     )
