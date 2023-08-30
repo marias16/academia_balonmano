@@ -4,7 +4,6 @@ const data = [
         group: ["juego", "global"],
         name:"Gol al bote",
         text: "Crear espacios sin balón",
-        img: "img/3002.png",
         categories: ["juego", "gol al bote"],
         content: ["desmarque, marcaje", "campo visual", "petición", "relación"],
         players: {
