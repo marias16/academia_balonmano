@@ -7,7 +7,7 @@ const Navbar = () => {
     const context = useContext(CalendarioContext)
     
     return (
-        <nav className="flex justify-between items-center w-full py-5 px-8 font-normal text-sm">
+        <nav className="flex justify-between items-center w-full py-5 px-8 font-normal text-sm fixed top-0 z-40 bg-white">
             <ul className="flex items-center gap-3">
                 <li className="text-sm font-bold">
                     <NavLink to="/"> AcademiaBalonmano </NavLink>

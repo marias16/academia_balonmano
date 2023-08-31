@@ -4,11 +4,21 @@ export const CalendarioContext = createContext()
 
 export const CalendarioProvider = ({children}) => {
     const [count, setCount] = useState(0)
-    
+
+    //Product Detail · Open
+    const [isProductOpen, setProductOpen] = useState(false)
+    const openProduct = () => setProductOpen(true)
+    const closeProduct = () => setProductOpen(false)
+
+    //Product Detail · Show product
+
     return (
         <CalendarioContext.Provider value={({
             count,
-            setCount
+            setCount,
+            isProductOpen,
+            openProduct,
+            closeProduct
         })}>
             {children}
         </CalendarioContext.Provider>

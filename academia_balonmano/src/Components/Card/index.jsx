@@ -5,7 +5,10 @@ const Card = ({data}) => {
     const context = useContext(CalendarioContext)
 
     return (
-        <div className="cursor-pointer w-56 h-68">
+        <div 
+            className="cursor-pointer w-56 h-68"
+            onClick={() => context.openProduct()}
+        >
             <figure className="relative mb-2 w-full h-4/5" >
                 <span className="absolute bottom-0 left-0 bg-black rounded-lg text-white text-xs m-2 px-3 py-0.5">
                 {data.categories[0]}</span>
