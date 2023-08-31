@@ -4,10 +4,11 @@ import './styles.css'
 
 const ProductDetail = () => {
     const context = useContext(CalendarioContext)
+    const product = context.productToShow 
 
     return (
-        <aside className={`${context.isProductOpen ? 'flex' : 'hidden'} product-detail flex flex-col fixed bg-white right-0 border border-black rounded-sm`}>
-            <div className="flex justify-between items-center p-6">
+        <aside className={`${context.isProductOpen ? 'flex' : 'hidden'} product-detail flex flex-col fixed bg-white right-0 border border-black rounded-sm p-6`}>
+            <div className="flex justify-between items-center">
                 <h2 className="font-medium text-xl">Ejercicio</h2>
                 <div 
                     className="cursor-pointer"
@@ -17,6 +18,12 @@ const ProductDetail = () => {
                     </svg>
                 </div>
             </div>
+            <h1 className="font-bold text-lg mt-5">{product.name}</h1>
+            <img 
+            src={`src/assets/data/img/${product.id}.png`}
+            className="object-cover"
+            />
+            <p>{product.text}</p>
         </aside>
     )
 }

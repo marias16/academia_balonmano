@@ -3,6 +3,7 @@ import { createContext, useState } from 'react'
 export const CalendarioContext = createContext()
 
 export const CalendarioProvider = ({children}) => {
+    // Calendar · Count
     const [count, setCount] = useState(0)
 
     //Product Detail · Open
@@ -11,6 +12,7 @@ export const CalendarioProvider = ({children}) => {
     const closeProduct = () => setProductOpen(false)
 
     //Product Detail · Show product
+    const [productToShow, setProductToShow] = useState({})
 
     return (
         <CalendarioContext.Provider value={({
@@ -18,7 +20,9 @@ export const CalendarioProvider = ({children}) => {
             setCount,
             isProductOpen,
             openProduct,
-            closeProduct
+            closeProduct,
+            productToShow,
+            setProductToShow
         })}>
             {children}
         </CalendarioContext.Provider>

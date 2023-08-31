@@ -4,10 +4,16 @@ import { CalendarioContext } from '../../Context'
 const Card = ({data}) => {
     const context = useContext(CalendarioContext)
 
+    const showProduct = (product) => {
+        context.openProduct()
+        context.setProductToShow(product)
+    }
+
+
     return (
         <div 
             className="cursor-pointer w-56 h-68"
-            onClick={() => context.openProduct()}
+            onClick={() => showProduct(data)}
         >
             <figure className="relative mb-2 w-full h-4/5" >
                 <span className="absolute bottom-0 left-0 bg-black rounded-lg text-white text-xs m-2 px-3 py-0.5">
