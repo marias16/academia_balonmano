@@ -1,8 +1,11 @@
+import { useContext } from 'react'
+import { CalendarioContext } from '../../Context'
 import { NavLink } from "react-router-dom"
 
 const Navbar = () => {
     const activeStyle = "underline underline-offset-4"
-
+    const context = useContext(CalendarioContext)
+    
     return (
         <nav className="flex justify-between items-center w-full py-5 px-8 font-normal text-sm">
             <ul className="flex items-center gap-3">
@@ -41,7 +44,7 @@ const Navbar = () => {
                         to="/calendario"
                         className={({isActive}) =>
                                 isActive ? activeStyle : undefined 
-                    }> Calendario </NavLink>
+                    }> Calendario {context.count} </NavLink>
                 </li>
                 <li>
                     <NavLink 
