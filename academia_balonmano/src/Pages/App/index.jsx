@@ -7,7 +7,6 @@ import Usuario from '../Usuario'
 import Equipos from '../Equipos'
 import NotFound from '../notfound'
 import Navbar from '../../Components/Navbar'
-import Layout from "../../Components/Layout"
 import './App.css'
 
 const AppRoutes = () => {
@@ -31,9 +30,7 @@ function App() {
     <CalendarioProvider>
       <BrowserRouter>
           <Navbar />
-          <Layout>
             <AppRoutes />
-          </Layout>
         </BrowserRouter>
     </CalendarioProvider>
     </>
