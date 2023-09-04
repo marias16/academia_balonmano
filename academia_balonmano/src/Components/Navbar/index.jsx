@@ -48,10 +48,10 @@ const Navbar = () => {
                 </li>
                 <li>
                     <NavLink 
-                        to="/equipos"
+                        to="/entrenamientos"
                         className={({isActive}) =>
                             isActive ? activeStyle : undefined 
-                    }> Equipos </NavLink>
+                    }> Entrenamientos </NavLink>
                 </li>
                 <li>
                     <NavLink 

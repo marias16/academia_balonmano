@@ -4,7 +4,7 @@ import Home from '../Home'
 import Calendario from '../Calendario'
 import Login from '../Login'
 import Usuario from '../Usuario'
-import Equipos from '../Equipos'
+import Entrenamientos from '../Entrenamientos'
 import NotFound from '../notfound'
 import Navbar from '../../Components/Navbar'
 import './App.css'
@@ -14,7 +14,7 @@ const AppRoutes = () => {
     { path: "/", element: <Home /> },
     { path: "/calendario", element: <Calendario /> },
     { path: "/login", element: <Login /> },
-    { path: "/equipos", element: <Equipos /> },
+    { path: "/entrenamientos", element: <Entrenamientos /> },
     { path: "/*", element: <NotFound /> },
     { path: "/usuario", element: <Usuario /> },
   ]);
