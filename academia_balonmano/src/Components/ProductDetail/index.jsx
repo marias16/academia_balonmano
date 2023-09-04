@@ -21,12 +21,12 @@ const ProductDetail = () => {
             <div className="flex flex-col gap-2 overflow-y-auto">
                 
                 <h1 className="font-bold text-lg mt-5">{product.name}</h1>
-                <div className="flex gap-1">
+                <div className="flex gap-1 flex-wrap">
                     {
                         product.content?.map((tag, index) => 
                             <span 
                                 key={index}
-                                className="bg-slate-200 rounded-lg font-light text-xs px-1.5"> 
+                                className="bg-slate-200 rounded-lg font-light text-xs px-1"> 
                             {tag} </span>)
                     }
                 </div>
