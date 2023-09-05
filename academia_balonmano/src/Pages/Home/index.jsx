@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Data from '../../assets/data'
 import Card from '../../Components/Card'
 import ProductDetail from '../../Components/ProductDetail'
+import CalendarSide from '../../Components/CalendarSide'
 import Layout from "../../Components/Layout"
 
 function Home() {
@@ -26,6 +27,7 @@ function Home() {
         
         </section>
         <ProductDetail />
+        <CalendarSide />
         
       </Layout>
   )
