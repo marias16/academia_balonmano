@@ -13,7 +13,7 @@ function Home() {
         <Layout>
           
           <p className="mb-8 font-bold">Bienvenido/a a Academia Balonmano</p>
-          <section className="flex gap-10 flex-wrap w-full max-w-screen-lg">
+          <section className="flex gap-5 flex-wrap w-full max-w-screen-lg">
         {
           Items?.map(item => 
           (

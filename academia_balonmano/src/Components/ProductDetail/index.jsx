@@ -7,6 +7,13 @@ const ProductDetail = () => {
     const context = useContext(CalendarioContext)
     const product = context.productToShow 
 
+    const addToCalendar = (item) => {
+        context.setCount(context.count + 1)
+        context.setCalendarList([...context.calendarList, item])
+    }
+
+    const isItInCalendar = context.calendarList.filter(item => item === product).length > 0
+
     return (
         <aside className={`${context.isProductOpen ? 'flex' : 'hidden'} duration-500 product-detail flex flex-col fixed bg-white right-0 border border-black rounded-sm py-6 pl-6 pr-2`}>
             <div className="flex justify-between items-center">
@@ -51,7 +58,9 @@ const ProductDetail = () => {
                     </div>
                 </section>
                 
-                <button className="btn mr-2 mt-2 bg-lime-600 hover:bg-lime-700 text-white"> 
+                <button 
+                className={`${isItInCalendar ? 'disabled' : ' bg-lime-600 hover:bg-lime-700 text-white'} btn mr-2 mt-2`}
+                onClick={() => addToCalendar(product)}> 
                     PROGRAMAR 
                 </button>
 
