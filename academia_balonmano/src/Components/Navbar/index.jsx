@@ -44,7 +44,7 @@ const Navbar = () => {
                         to="/calendario"
                         className={({isActive}) =>
                                 isActive ? activeStyle : undefined 
-                    }> Calendario {context.count} </NavLink>
+                    }> Calendario {context.calendarList.length} </NavLink>
                 </li>
                 <li>
                     <NavLink 
