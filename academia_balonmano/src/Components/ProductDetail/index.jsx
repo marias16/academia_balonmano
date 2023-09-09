@@ -8,7 +8,6 @@ const ProductDetail = () => {
     const product = context.productToShow 
 
     const addToCalendar = (item) => {
-        context.setCount(context.count + 1)
         context.setCalendarList([...context.calendarList, item])
     }
 
