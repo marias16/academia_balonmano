@@ -1,9 +1,10 @@
 /* eslint-disable no-unused-vars */
-import { useState, useContext } from 'react'
+import { useContext } from 'react'
 import { CalendarioContext } from '../../Context'
 import Card from '../../Components/Card'
 import ProductDetail from '../../Components/ProductDetail'
 import CalendarSide from '../../Components/CalendarSide'
+import CategoryTag from '../../Components/CategoryTag'
 import Layout from "../../Components/Layout"
 
 function Home() {
@@ -32,14 +33,15 @@ function Home() {
             placeholder="Busca tu ejercicio" 
             className="rounded-lg border border-black w-9/12 p-4 mb-4 focus: outline-none"
             onChange={(event) => context.setSearchByTitle(event.target.value)}
-            />
+          />
 
-          <section className="flex gap-5 flex-wrap w-full max-w-screen-lg">
+          <section className="flex gap-2 py-4">
+            {context.categories.map(category => (<CategoryTag key={category} category={category}/>))}
+          </section>
           
-        {renderView()}
-
-        
-        </section>
+          <section className="flex gap-5 flex-wrap w-full max-w-screen-lg">
+            {renderView()}
+          </section>
         <ProductDetail />
         <CalendarSide />
         

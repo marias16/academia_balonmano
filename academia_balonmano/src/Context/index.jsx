@@ -7,15 +7,40 @@ export const CalendarioProvider = ({children}) => {
     //Search exercises
     const [items, setItems] = useState(Data)
     const [filteredItems, setFilteredItems] = useState([])
+
+    //Search exercises · by title
     const [searchByTitle, setSearchByTitle] = useState('')
 
-    const filteredItemsByTitle = (aaa, bbb) => {
-        return aaa?.filter(item => item.name.toLowerCase().includes(bbb.toLowerCase()))
+    const filteredItemsByTitle = (items, searchByTitle) => {
+        return items?.filter(item => item.name.toLowerCase().includes(searchByTitle.toLowerCase()))
     }
 
+  
+    //Search exercises · by category
+
+    //Get all categories 
+    const categories = []
+    
+    items.forEach(item => item.categories.forEach(category => 
+        categories.includes(category) ? undefined : categories.push(category)
+    ))
+    
+    //Get categories selected
+    const [searchByCategories, setSearchByCategories] = useState([])
+    const filteredItemsByCategories = (items, searchByCategories) => {
+        return items?.filter(item => {
+            item.categories.map())
+        })
+    }
+
+    console.log(filteredItemsByCategories(items, searchByCategories))
+
+    //Effect hook for search
     useEffect(() => {
         if(searchByTitle) setFilteredItems(filteredItemsByTitle(items, searchByTitle))
-    }, [items, searchByTitle])
+        if(searchByCategories) setFilteredItems(filteredItemsByCategories(items, searchByCategories))
+    }, [items, searchByTitle, searchByCategories])
+
 
     //Product Detail · Open
     const [isProductOpen, setProductOpen] = useState(false)
@@ -45,6 +70,10 @@ export const CalendarioProvider = ({children}) => {
             filteredItems, 
             setFilteredItems,
             filteredItemsByTitle,
+            categories,
+            searchByCategories, 
+            setSearchByCategories,
+            filteredItemsByCategories,
             isProductOpen,
             openProduct,
             closeProduct,

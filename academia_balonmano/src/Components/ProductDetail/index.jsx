@@ -26,7 +26,7 @@ const ProductDetail = () => {
                 <h1 className="font-bold text-lg mt-5">{product.name}</h1>
                 <div className="flex gap-1 flex-wrap">
                     {
-                        product.content?.map((tag) => 
+                        product.categories?.map((tag) => 
                             <span 
                                 key={tag}
                                 className="bg-slate-200 rounded-lg font-light text-xs px-1"> 

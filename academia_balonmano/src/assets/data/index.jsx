@@ -1,11 +1,10 @@
 const data = [
     {
         id: 3002,
-        group: ["juego", "global"],
+        group: "juego",
         name:"Gol al bote",
         text: "Crear espacios sin balón",
-        categories: ["juego", "gol al bote"],
-        content: ["desmarque, marcaje", "campo visual", "petición", "relación"],
+        categories: ["desmarque, marcaje", "campo visual", "petición", "relación"],
         players: {
             attack: "Pase sobre línea es gol si recepciona compañero",
             defense: "Intercepta para atacar",
@@ -25,11 +24,10 @@ const data = [
     },
     {
         id: 3003,
-        group: ["juego", "global"],
+        group: "juego",
         name:"Balón pilla, balón salva",
         text: "Desmarques",
-        categories: ["juego"],
-        content: ["desmarque, marcaje", "campo visual", "petición", "relación"],
+        categories: ["petición", "relación"],
         players: {
             attack: "Pase sobre línea es gol si recepciona compañero",
             defense: "Intercepta para atacar",
@@ -49,11 +47,10 @@ const data = [
     },
     {
         id: 3004,
-        group: ["juego", "global"],
+        group: "juego",
         name:"Paintball",
         text: "Lanzamientos",
-        categories: ["juego"],
-        content: ["desmarque, marcaje", "campo visual", "petición", "relación"],
+        categories: ["habilidades básicas"],
         players: {
             attack: "Pase sobre línea es gol si recepciona compañero",
             defense: "Intercepta para atacar",
@@ -73,11 +70,10 @@ const data = [
     },
     {
         id: 3005,
-        group: ["juego", "global"],
+        group: "juego",
         name:"Minibm",
         text: "Se saca de porteria",
-        categories: ["juego", "gol al bote"],
-        content: ["desmarque, marcaje", "campo visual", "petición", "relación"],
+        categories: ["contraataque", "defensa"],
         players: {
             attack: "Pase sobre línea es gol si recepciona compañero",
             defense: "Intercepta para atacar",
@@ -97,11 +93,10 @@ const data = [
     },
     {
         id: 3006,
-        group: ["juego", "global"],
+        group: "juego",
         name:"Pasar por debajo",
         text: "Tocar con balón sin lanzar pilla",
-        categories: ["juego"],
-        content: ["desmarque, marcaje", "campo visual", "petición", "relación"],
+        categories: ["pase", "recepción"],
         players: {
             attack: "Pase sobre línea es gol si recepciona compañero",
             defense: "Intercepta para atacar",
@@ -124,8 +119,7 @@ const data = [
         group: ["juego"],
         name:"Diana móvil",
         text: "Desplazar medicinal a campo contrario",
-        categories: ["tarea jugada"],
-        content: ["desmarque, marcaje", "campo visual", "petición", "relación"],
+        categories: ["lanzamiento"],
         players: {
             attack: "Pase sobre línea es gol si recepciona compañero",
             defense: "Intercepta para atacar",
