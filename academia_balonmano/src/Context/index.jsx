@@ -31,10 +31,31 @@ export const CalendarioProvider = ({children}) => {
         return items?.filter(item => item.categories.filter(category => category === searchByCategories).length > 0)
     }
 
-    //Effect hook for search
+    //Lets combine both
+    const searchBy = (searchType, items, searchByTitle, searchByCategories) => {
+        if(searchType === 'BY_TITLE') {
+            return filteredItemsByTitle(items, searchByTitle)
+        }
+
+        if (searchType === 'BY_CATEGORY') {
+            return filteredItemsByCategories(items, searchByCategories)
+        }
+
+        if (searchType === 'BY_TITLE_AND_CATEGORY') {
+            return filteredItemsByCategories(items, searchByCategories).filter(item => item.name.includes(searchByTitle))
+        }
+
+        if (!searchType) {
+            return items;
+        }
+    }
+
+
     useEffect(() => {
-        if(searchByTitle) setFilteredItems(filteredItemsByTitle(items, searchByTitle))
-        if(searchByCategories) setFilteredItems(filteredItemsByCategories(items, searchByCategories))
+        if(searchByTitle && !searchByCategories) setFilteredItems(searchBy('BY_TITLE',items, searchByTitle, searchByCategories))
+        if(searchByCategories && !searchByTitle) setFilteredItems(searchBy('BY_CATEGORY', items, searchByTitle, searchByCategories))
+        if(searchByCategories && searchByTitle) setFilteredItems(searchBy('BY_TITLE_AND_CATEGORY', items, searchByTitle, searchByCategories))
+        if(!searchByCategories && !searchByTitle) setFilteredItems(searchBy('', items, searchByTitle, searchByCategories))
     }, [items, searchByCategories, searchByTitle])
 
 
