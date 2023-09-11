@@ -26,20 +26,16 @@ export const CalendarioProvider = ({children}) => {
     ))
     
     //Get categories selected
-    const [searchByCategories, setSearchByCategories] = useState([])
+    const [searchByCategories, setSearchByCategories] = useState('')
     const filteredItemsByCategories = (items, searchByCategories) => {
-        return items?.filter(item => {
-            item.categories.map())
-        })
+        return items?.filter(item => item.categories.filter(category => category === searchByCategories).length > 0)
     }
-
-    console.log(filteredItemsByCategories(items, searchByCategories))
 
     //Effect hook for search
     useEffect(() => {
         if(searchByTitle) setFilteredItems(filteredItemsByTitle(items, searchByTitle))
         if(searchByCategories) setFilteredItems(filteredItemsByCategories(items, searchByCategories))
-    }, [items, searchByTitle, searchByCategories])
+    }, [items, searchByCategories, searchByTitle])
 
 
     //Product Detail · Open

@@ -11,7 +11,7 @@ function Home() {
   const context = useContext(CalendarioContext)
 
   const renderView = () => {
-    const itemsToRender = context.searchByTitle.length > 0 ? context.filteredItems : context.items
+    const itemsToRender = context.searchByTitle.length > 0  || context.searchByCategories.length > 0? context.filteredItems : context.items
     if (itemsToRender.length > 0) {
       return (
         itemsToRender.map(item => (<Card key={item.id} data={item}/>))
@@ -35,7 +35,7 @@ function Home() {
             onChange={(event) => context.setSearchByTitle(event.target.value)}
           />
 
-          <section className="flex gap-2 py-4">
+          <section className="flex gap-2 py-4 flex-wrap">
             {context.categories.map(category => (<CategoryTag key={category} category={category}/>))}
           </section>
           
