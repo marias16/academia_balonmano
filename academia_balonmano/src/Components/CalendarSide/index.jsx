@@ -23,7 +23,24 @@ const CalendarSide= () => {
                     <XMarkIcon> </XMarkIcon>
                 </div>
             </div>
-            <div className="flex flex-col gap-3 mt-5 overflow-y-auto px-2">
+
+            <div className="flex gap-4">
+                <div>
+                    <p>Equipo</p>
+                    <select>
+                        <option value="volvo">Cadete Femenino</option>
+                        <option value="saab">Juvenil Masculino</option>
+                        <option value="opel">Juvenil Femenino</option>
+                    </select>
+                </div>
+                <div>
+                    <p>Fecha</p>
+                    <input type="date" />
+                </div>
+            </div>
+
+            <p>Ejercicios</p>
+            <div className="flex flex-col gap-3 mt-5 h-1/2 overflow-y-auto px-2">
             { context.isCalendarSideOpen && context.calendarList.length === 0 ? emptyMessage : undefined}
                 {
                     context.calendarList?.map( data => (
@@ -36,6 +53,18 @@ const CalendarSide= () => {
                     ))
                 }
             </div>
+            
+            
+            <div>
+                <p>Notas</p>
+                <textarea className="w-full"></textarea>
+            </div>
+
+            <button 
+                className='bg-lime-600 hover:bg-lime-700 text-white btn mr-2 mt-2'> 
+                    PROGRAMAR 
+            </button>
+            
         </aside>
     )
 }

@@ -46,12 +46,10 @@ const Navbar = () => {
                 <li className="text-black/60">
                     Hola, Usuario
                 </li>
-                <li>
-                    <NavLink 
-                        to="/entrenamiento"
-                        className={({isActive}) =>
-                                isActive ? activeStyle : undefined 
-                    }> Entrenamiento {context.calendarList.length} </NavLink>
+                <li 
+                onClick={() => context.openCalendarSide()}
+                className="cursor-pointer">
+                    Entrenamiento {context.calendarList.length} 
                 </li>
                 <li>
                     <NavLink 
