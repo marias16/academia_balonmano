@@ -19,19 +19,19 @@ export const CalendarioProvider = ({children}) => {
     //Search exercises · by category
 
     //Get all categories 
-    const categories = []
-    
-    items.forEach(item => item.categories.forEach(category => 
-        categories.includes(category) ? undefined : categories.push(category)
-    ))
+    const categories = ["habilidades básicas", "técnica ofensiva", "técnica defensiva", "táctica ofensiva", "táctica defensiva"]
     
     //Get categories selected
-    const [searchByCategories, setSearchByCategories] = useState('')
+    const [searchByCategories, setSearchByCategories] = useState([])
+
     const filteredItemsByCategories = (items, searchByCategories) => {
-        return items?.filter(item => item.categories.filter(category => category === searchByCategories).length > 0)
+        const filteredItems = []
+        items.forEach(item => item.categories.forEach(itemCategory => searchByCategories.forEach(searchCategory => 
+            searchCategory === itemCategory && !filteredItems.includes(item) ? filteredItems.push(item) : undefined)))
+        return filteredItems
     }
 
-    //Lets combine both
+    //Let's combine both
     const searchBy = (searchType, items, searchByTitle, searchByCategories) => {
         if(searchType === 'BY_TITLE') {
             return filteredItemsByTitle(items, searchByTitle)
@@ -42,20 +42,18 @@ export const CalendarioProvider = ({children}) => {
         }
 
         if (searchType === 'BY_TITLE_AND_CATEGORY') {
-            return filteredItemsByCategories(items, searchByCategories).filter(item => item.name.includes(searchByTitle))
+            return filteredItemsByTitle(filteredItemsByCategories(items, searchByCategories), searchByTitle)
         }
+        
 
-        if (!searchType) {
-            return items;
-        }
     }
 
 
     useEffect(() => {
-        if(searchByTitle && !searchByCategories) setFilteredItems(searchBy('BY_TITLE',items, searchByTitle, searchByCategories))
+        if(searchByTitle && searchByCategories.length === 0) setFilteredItems(searchBy('BY_TITLE',items, searchByTitle, searchByCategories))
         if(searchByCategories && !searchByTitle) setFilteredItems(searchBy('BY_CATEGORY', items, searchByTitle, searchByCategories))
         if(searchByCategories && searchByTitle) setFilteredItems(searchBy('BY_TITLE_AND_CATEGORY', items, searchByTitle, searchByCategories))
-        if(!searchByCategories && !searchByTitle) setFilteredItems(searchBy('', items, searchByTitle, searchByCategories))
+        if(searchByCategories.length === 0 && !searchByTitle) setFilteredItems(items)
     }, [items, searchByCategories, searchByTitle])
 
 

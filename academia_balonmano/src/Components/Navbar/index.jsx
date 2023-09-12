@@ -34,6 +34,13 @@ const Navbar = () => {
                             isActive ? activeStyle : undefined 
                     }> Defensa </NavLink>
                 </li>
+                <li>
+                    <NavLink 
+                    to="/habilidades-basicas"
+                    className={({isActive}) =>
+                            isActive ? activeStyle : undefined 
+                    }> Habilidades básicas </NavLink>
+                </li>
             </ul>
             <ul className="flex items-center gap-3">
                 <li className="text-black/60">
@@ -41,17 +48,17 @@ const Navbar = () => {
                 </li>
                 <li>
                     <NavLink 
-                        to="/calendario"
+                        to="/entrenamiento"
                         className={({isActive}) =>
                                 isActive ? activeStyle : undefined 
-                    }> Calendario {context.calendarList.length} </NavLink>
+                    }> Entrenamiento {context.calendarList.length} </NavLink>
                 </li>
                 <li>
                     <NavLink 
-                        to="/sdfsdfsdfsdf"
+                        to="/calendario"
                         className={({isActive}) =>
                             isActive ? activeStyle : undefined 
-                    }> kjnjdfnskjdf </NavLink>
+                    }> Calendario </NavLink>
                 </li>
                 <li>
                     <NavLink 

@@ -9,7 +9,8 @@ import Layout from "../../Components/Layout"
 
 function Home() {
   const context = useContext(CalendarioContext)
-
+  console.log(context.filteredItems)
+  
   const renderView = () => {
     if (context.filteredItems.length > 0) {
       return (
@@ -17,7 +18,7 @@ function Home() {
       )
     } else {
       return (
-        <p>Tu búsqueda &quot;{context.searchByTitle}&quot; no dio resultados. Por favor, inténtalo otra vez.</p>
+        <p>Tu búsqueda no dio resultados. Por favor, inténtalo otra vez.</p>
       )
     }
   }

@@ -4,13 +4,13 @@ import { CalendarioContext } from '../../Context'
 const CategoryTag = ({category}) => {
     const context = useContext(CalendarioContext)
     
-    const isSelected = context.searchByCategories === category
+    const isSelected = context.searchByCategories.includes(category)
 
     const switchState = (category) => {
         if (isSelected === true) {
-            return context.setSearchByCategories('')
+            return context.setSearchByCategories(context.searchByCategories.filter(searchCategory => searchCategory !== category))
         } else if (isSelected === false) {
-            return context.setSearchByCategories(category)
+            return context.setSearchByCategories([...context.searchByCategories, category])
         }
     }
 
