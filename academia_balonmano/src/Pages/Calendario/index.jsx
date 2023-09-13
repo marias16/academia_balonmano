@@ -7,14 +7,15 @@ function Calendario() {
 
     return (
       <>
-          <p>Calendario</p>
-          <ul>
-            {
-              context.calendarList?.map(item => 
-                (<CalendarItem data={item} key={item.id}/>) 
-              )
-            }
-          </ul>
+          <p>Próximos entrenamientos</p>
+              {
+                    context.calendar?.map( data => (
+                        <CalendarItem
+                            key={data.id}
+                            data= {data}
+                        />
+                    ))
+                }
       </>
     )
   }

@@ -3,7 +3,7 @@ import { CalendarioContext } from '../../Context'
 import { v4 as uuidv4 } from 'uuid';
 
 import XMarkIcon from '../XMarkIcon'
-import CalendarItem from '../CalendarItem'
+import TrainingItem from '../TrainingItem'
 import './styles.css'
 
 const CalendarSide= () => {
@@ -24,7 +24,7 @@ const CalendarSide= () => {
             team: team,
             date: date,
             notes: notes,
-            id: uuidv4()
+            uuid: uuidv4()
         }
 
         context.setCalendar(context.calendar.push(trainingToAdd))
@@ -68,7 +68,7 @@ const CalendarSide= () => {
             { context.isCalendarSideOpen && context.calendarList.length === 0 ? emptyMessage : undefined}
                 {
                     context.calendarList?.map( data => (
-                        <CalendarItem 
+                        <TrainingItem 
                             key={data.id}
                             name= {data.name}
                             id={data.id}
