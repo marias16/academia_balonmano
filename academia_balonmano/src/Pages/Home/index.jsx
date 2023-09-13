@@ -9,8 +9,7 @@ import Layout from "../../Components/Layout"
 
 function Home() {
   const context = useContext(CalendarioContext)
-  console.log(context.filteredItems)
-  
+    
   const renderView = () => {
     if (context.filteredItems.length > 0) {
       return (

@@ -1,11 +1,16 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { CalendarioContext } from '../../Context'
+import { v4 as uuidv4 } from 'uuid';
+
 import XMarkIcon from '../XMarkIcon'
 import CalendarItem from '../CalendarItem'
 import './styles.css'
 
 const CalendarSide= () => {
     const context = useContext(CalendarioContext)
+    const [team, setTeam] = useState('')
+    const [date, setDate] = useState('')
+    const [notes, setNotes] = useState('')
 
     const handleDelete = (id) => {
         console.log('ayuda')
@@ -13,6 +18,24 @@ const CalendarSide= () => {
         context.setCalendarList(filteredList)
     }
     
+    const handleSchedule = () => {
+        const trainingToAdd = {
+            exercises: context.calendarList,
+            team: team,
+            date: date,
+            notes: notes,
+            id: uuidv4()
+        }
+
+        context.setCalendar(context.calendar.push(trainingToAdd))
+        console.log(trainingToAdd)
+
+        context.setCalendarList([])
+        setTeam('')
+        setNotes('')
+        setDate('')
+    }
+
     const emptyMessage = <p>Añade un ejercicio para empezar a programar tu entrenamiento.</p>
 
     return (
@@ -27,15 +50,16 @@ const CalendarSide= () => {
             <div className="flex gap-4">
                 <div>
                     <p>Equipo</p>
-                    <select>
-                        <option value="volvo">Cadete Femenino</option>
-                        <option value="saab">Juvenil Masculino</option>
-                        <option value="opel">Juvenil Femenino</option>
+                    <select value={team} onChange={(e) => setTeam(e.target.value)}>
+                        <option value="">Selecciona uno</option>
+                        <option value="Cadete Femenino">Cadete Femenino</option>
+                        <option value="Juvenil Masculino">Juvenil Masculino</option>
+                        <option value="Juvenil Femenino">Juvenil Femenino</option>
                     </select>
                 </div>
                 <div>
                     <p>Fecha</p>
-                    <input type="date" />
+                    <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
                 </div>
             </div>
 
@@ -57,11 +81,12 @@ const CalendarSide= () => {
             
             <div>
                 <p>Notas</p>
-                <textarea className="w-full"></textarea>
+                <textarea className="w-full" value={notes} onChange={(e) => setNotes(e.target.value)}></textarea>
             </div>
 
             <button 
-                className='bg-lime-600 hover:bg-lime-700 text-white btn mr-2 mt-2'> 
+                className='bg-lime-600 hover:bg-lime-700 text-white btn mr-2 mt-2'
+                onClick={() => handleSchedule()}> 
                     PROGRAMAR 
             </button>
             

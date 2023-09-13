@@ -67,12 +67,14 @@ export const CalendarioProvider = ({children}) => {
 
     //Calendar
     const [calendarList, setCalendarList] = useState([])
-   
 
     //Calendar · Side-menu
     const [isCalendarSideOpen, setCalendarSideOpen] = useState(false)
     const openCalendarSide = () => setCalendarSideOpen(true)
     const closeCalendarSide = () => setCalendarSideOpen(false)
+
+    //Calendar · Checkout training
+    const [calendar, setCalendar] = useState([])
 
 
 
@@ -99,7 +101,9 @@ export const CalendarioProvider = ({children}) => {
             isCalendarSideOpen,
             setCalendarSideOpen,
             openCalendarSide,
-            closeCalendarSide
+            closeCalendarSide,
+            calendar, 
+            setCalendar
         })}>
             {children}
         </CalendarioContext.Provider>
