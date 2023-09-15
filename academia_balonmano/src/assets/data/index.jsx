@@ -4,7 +4,7 @@ const data = [
         group: "juego",
         name:"Gol al bote",
         text: "Crear espacios sin balón",
-        categories: ["habilidades básicas", "técnica ofensiva"],
+        categories: ["táctica defensiva", "táctica ofensiva"],
         subcategories: ["desmarque, marcaje", "campo visual", "petición", "relación"],
         players: {
             attack: "Pase sobre línea es gol si recepciona compañero",
@@ -28,7 +28,7 @@ const data = [
         group: "juego",
         name:"Balón pilla, balón salva",
         text: "Desmarques",
-        categories: ["técnica defensiva", "técnica ofensiva"],
+        categories: ["técnica ofensiva"],
         subcategories: ["petición", "relación"],
         players: {
             attack: "Pase sobre línea es gol si recepciona compañero",
@@ -52,7 +52,7 @@ const data = [
         group: "juego",
         name:"Paintball",
         text: "Lanzamientos",
-        categories: ["habilidades básicas", "táctica ofensiva"],
+        categories: ["técnica ofensiva"],
         subcategories: [],
         players: {
             attack: "Pase sobre línea es gol si recepciona compañero",
@@ -74,9 +74,9 @@ const data = [
     {
         id: 3005,
         group: "juego",
-        name:"Minibm",
+        name:"Minibalonmano",
         text: "Se saca de porteria",
-        categories: ["técnica defensiva"],
+        categories: ["táctica ofensiva", "táctica defensiva"],
         subcategories: [],
         players: {
             attack: "Pase sobre línea es gol si recepciona compañero",
@@ -100,7 +100,7 @@ const data = [
         group: "juego",
         name:"Pasar por debajo",
         text: "Tocar con balón sin lanzar pilla",
-        categories: ["técnica ofensiva", "habilidades básicas"],
+        categories: ["técnica ofensiva"],
         subcategories: ["pase", "recepción"],
         players: {
             attack: "Pase sobre línea es gol si recepciona compañero",
@@ -124,7 +124,7 @@ const data = [
         group: ["juego"],
         name:"Diana móvil",
         text: "Desplazar medicinal a campo contrario",
-        categories: ["técnica ofensiva", "técnica defensiva"],
+        categories: ["técnica ofensiva"],
         subcategories: ["lanzamiento"],
         players: {
             attack: "Pase sobre línea es gol si recepciona compañero",

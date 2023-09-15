@@ -27,8 +27,8 @@ const CalendarSide= () => {
             uuid: uuidv4()
         }
 
-        context.setCalendar(context.calendar.push(trainingToAdd))
-        console.log(trainingToAdd)
+        context.setCalendar([...context.calendar, trainingToAdd])
+        console.log(context.calendar)
 
         context.setCalendarList([])
         setTeam('')

@@ -10,10 +10,10 @@ const Landing = () => {
         <section className="flex flex-col gap-8 items-center text-center">
             <div className="flex flex-col items-center">
                 <img className="w-10 h-10" src="src/assets/data/icon/ball.png"/>
-                <h1 className="title text-6xl ">Programa.Entrena. <br/> Gana.</h1>
+                <h1 className="title text-6xl ">Programa tus entrenamientos <br/> con Academia Balonmano</h1>
             </div>
         
-            <p className="text-lg">Lleva a tu club al siguiente nivel con Academia Balonmano. <br />
+            <p className="text-lg">Programa desde entrenamientos hasta el trimestre. <br />
                 Todas las herramientas que necesitas en un mismo lugar.
             </p>
         </section>

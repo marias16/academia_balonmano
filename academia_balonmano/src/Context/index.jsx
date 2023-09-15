@@ -74,7 +74,7 @@ export const CalendarioProvider = ({children}) => {
     const closeCalendarSide = () => setCalendarSideOpen(false)
 
     //Calendar · Checkout training
-    const [calendar, setCalendar] = useState([])
+    const [calendar, setCalendar] = useState([{date: "2023-09-28", exercises: [{name:"Balón pilla, balón salva"}, {name:"Minibm"}], notes: "Esto es una prueba", team: "Juvenil Masculino", uuid: "c9ecb42d-e097-4bdc-91a1-d53f6c6ecb2a"}])
 
 
 
